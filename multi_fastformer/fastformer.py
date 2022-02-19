@@ -272,7 +272,7 @@ class Model(torch.nn.Module):
         if isinstance(module, nn.Linear) and module.bias is not None:
             module.bias.data.zero_()
 
-    def forward(self, input_ids, targets):
+    def forward(self, input_ids, targets, **kwargs):
         mask = input_ids.bool().float()
         embds = self.word_embedding(input_ids)
         text_vec = self.fastformer_model(embds, mask)
