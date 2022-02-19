@@ -1,6 +1,6 @@
 
 {
-    "word_size": 50000
+    "word_size": 50000,
     "n_global": 8,
     "input_dim": 256,
     "hidden_size":256,
