@@ -10,6 +10,9 @@ from transformers.models.bert.modeling_bert import (
     BertIntermediate,
     BertOutput,
 )
+from transformers.modeling_roberta import RobertaModel
+
+
 
 class AttentionPooling(nn.Module):
     def __init__(self, config):
@@ -251,7 +254,7 @@ class FastformerEncoder(nn.Module):
         return output
 
 
-class Model(torch.nn.Module):
+class Model(RobertaModel):
     def __init__(self, config):
         super(Model, self).__init__()
         self.config = config
