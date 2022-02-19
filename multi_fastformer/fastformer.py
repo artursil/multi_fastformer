@@ -16,7 +16,7 @@ class AttentionPooling(nn.Module):
         self.config = config
         super(AttentionPooling, self).__init__()
         self.att_fc1 = nn.Linear(config.hidden_size, config.hidden_size)
-        self.att_fc2 = nn.Linear(config.hidden_size, 1)
+        self.att_fc2 = nn.Linear(config.hidden_size, config.num_classes)
         self.apply(self.init_weights)
 
     def init_weights(self, module):
