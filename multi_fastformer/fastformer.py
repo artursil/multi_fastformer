@@ -254,7 +254,10 @@ class FastformerEncoder(nn.Module):
         return output
 
 
-class Model(RobertaModel):
+# class Model(RobertaModel):
+#     def __init__(self, config):
+#         super(Model, self).__init__()
+class Model(nn.Module):
     def __init__(self, config):
         super(Model, self).__init__()
         self.config = config
