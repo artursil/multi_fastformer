@@ -10,7 +10,7 @@ from transformers.models.bert.modeling_bert import (
     BertIntermediate,
     BertOutput,
 )
-from transformers.modeling_roberta import RobertaModel
+from transformers import RobertaModel
 
 
 
