@@ -281,7 +281,7 @@ class Model(nn.Module):
         if isinstance(labels, list):
             labels = torch.Tensor(labels)
         mask = input_ids.bool().float()
-        embd = self.word_embedding(input_ids.to(dtype=torch.int64))
+        embds = self.word_embedding(input_ids.to(dtype=torch.int64))
         text_vec = self.fastformer_model(embds, mask)
         score = self.dense_linear(text_vec)
         loss = self.criterion(score, labels)
