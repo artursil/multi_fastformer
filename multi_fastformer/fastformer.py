@@ -284,6 +284,6 @@ class Model(nn.Module):
         embds = self.word_embedding(input_ids.to(dtype=torch.int64))
         text_vec = self.fastformer_model(embds, mask)
         score = self.dense_linear(text_vec)
-        loss = self.criterion(score, labels.long())
+        loss = self.criterion(score, labels.half())
         return loss, score
 
