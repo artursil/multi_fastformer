@@ -276,6 +276,10 @@ class Model(nn.Module):
             module.bias.data.zero_()
 
     def forward(self, input_ids, labels, **kwargs):
+        if isinstance(input_ids, list):
+            input_ids = torch.Tensor(input_ids)
+        if isinstance(labels, list):
+            labels = torch.Tensor(labels)
         mask = input_ids.bool().float()
         embds = self.word_embedding(input_ids)
         text_vec = self.fastformer_model(embds, mask)
